@@ -1,0 +1,24 @@
+{
+  "name": "nasa-space-apps-2018",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Christopher Briggs <confusedmatrix@gmail.com>",
+  "license": "Apache 2.0",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "start:dev": "npm run build && npm start",
+    "clear_public": "rm -rf public/*",
+    "develop": "parcel src/client/index.html --out-dir public",
+    "build": "npm run clear_public && parcel build src/client/index.html --out-dir public",
+    "deploy": "npm run build && gcloud app deploy"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "hyperapp": "^1.2.6"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "parcel-bundler": "^1.8.1"
+  }
+}
