@@ -1,6 +1,7 @@
 import L from 'leaflet'
 
 // import config from "../config"
+import eventBus from "../services/EventBus"
 
 export class MapService {
     static init(node, config) {
@@ -53,6 +54,11 @@ export class MapService {
         });
 
         map.addLayer(layer);
+
+        // Force map reload on card environment update
+        eventBus.addEventListener("environmentUpdate", () => {
+            setTimeout(() => map.invalidateSize(), 100)
+        })
 
         return map
     }
