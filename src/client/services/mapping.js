@@ -1,78 +1,58 @@
-// import mapboxgl from "mapbox-gl" // using mapboxgl global var because parcel isn't playing well with mapboxgl from node modules
+import L from 'leaflet'
 
-import config from "../config"
-
-mapboxgl.accessToken = config.mapbox.token
+// import config from "../config"
 
 export class MapService {
-    static init(node) {
-        const map = new mapboxgl.Map({
-            container: node,
-            style: config.mapbox.styleUrl,
-            interactive: false,
-        })
+    static init(node, config) {
 
-        const framesPerSecond = 30
-        const initialOpacity = 1
-        const initialRadius = 5
-        const maxRadius = 30
-        const delay = 1000
+        const map = L.map(node, {
+            zoomControl: false,
+            attributionControl: false,
+            scrollWheelZoom: false,
+            keyboard: false,
+            touchZoom: false,
+            dragging: false,
+            boxZoom: false,
+            doubleClickZoom: false,
 
-        let opacity = initialOpacity
-        let radius = initialRadius
-
-        map.on('load', () => {
-
-            map.addSource('points', {
-                "type": "geojson",
-                "data": universities,
-            })
-
-            map.addLayer({
-                "id": "pulsatingPoint",
-                "source": "points",
-                "type": "circle",
-                "paint": {
-                    "circle-radius": initialRadius,
-                    "circle-radius-transition": { duration: 0 },
-                    "circle-opacity-transition": { duration: 0 },
-                    "circle-color": "#B33A3A",
-                },
-            })
-
-            map.addLayer({
-                "id": "staticPoint",
-                "source": "points",
-                "type": "circle",
-                "paint": {
-                    "circle-radius": initialRadius,
-                    "circle-color": "#B33A3A",
-                },
-            })
-
-            const animateMarker = () => {
-                setTimeout(() => {
-
-                    radius += (maxRadius - radius) / framesPerSecond
-                    opacity -= (1 / framesPerSecond)
-                    opacity = opacity < 0 ? 0 : opacity
-
-                    map.setPaintProperty('pulsatingPoint', 'circle-radius', radius)
-                    map.setPaintProperty('pulsatingPoint', 'circle-opacity', opacity)
-
-                    if (opacity <= 0) {
-                        radius = initialRadius
-                        opacity = initialOpacity
-                        setTimeout(() => requestAnimationFrame(animateMarker), delay)
-                    } else {
-                        requestAnimationFrame(animateMarker)
-                    }
-                }, 1000 / framesPerSecond)
-
-            }
-
-            animateMarker()
+            center: [-2.2119, 115.5357],
+            zoom: 10,
+            // Values are x and y here instead of lat and long elsewhere.
+            maxBounds: [
+                [-120, -220],
+                [120, 220]
+            ]
         });
+
+        const template =
+            '//gibs-{s}.earthdata.nasa.gov/wmts/epsg3857/best/' +
+            '{layer}/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg';
+
+        console.log(config.date)
+        const layer = L.tileLayer(template, {
+            layer: 'MODIS_Terra_CorrectedReflectance_TrueColor',
+            tileMatrixSet: 'GoogleMapsCompatible_Level9',
+            maxZoom: 9,
+            time: config.date,
+            tileSize: 256,
+            subdomains: 'abc',
+            noWrap: true,
+            continuousWorld: true,
+            // Prevent Leaflet from retrieving non-existent tiles on the
+            // borders.
+            bounds: [
+                [-85.0511287776, -179.999999975],
+                [85.0511287776, 179.999999975]
+            ],
+            attribution:
+                '<a href="https://wiki.earthdata.nasa.gov/display/GIBS">' +
+                'NASA EOSDIS GIBS</a>&nbsp;&nbsp;&nbsp;' +
+                '<a href="https://github.com/nasa-gibs/web-examples/blob/master/examples/leaflet/webmercator-epsg3857.js">' +
+                'View Source' +
+                '</a>'
+        });
+
+        map.addLayer(layer);
 
         return map
     }

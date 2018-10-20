@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: Helvetica, "Source San Pro", Arial, sans-serif;
+}
+
+.column {
+    padding: 1em;
+}
+
+#map {
+    height: 50vh;
+    width: 100vw;
+}
+
+.top-layer {
+    position: absolute;
+    opacity: 1;
+    z-index: 9999;
+    animation: fade 5s infinite;
+}
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
