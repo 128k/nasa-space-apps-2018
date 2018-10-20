@@ -3,6 +3,23 @@ body {
     font-family: Helvetica, "Source San Pro", Arial, sans-serif;
 }
 
+button {
+    background-color: #53FFAA;
+    border: 1px solid #46D990;
+    border-radius: 0.2em;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.3em;
+}
+
+#intro {
+    text-align: center;
+    height: calc(100vh - 1em);
+    background-color: #000;
+    color: #eee;
+    padding: 0.5em;
+}
+
 #card {
     position: absolute;
     top: 0;
@@ -30,6 +47,16 @@ body {
 }
 .column {
     padding: 1em;
+}
+
+.year {
+    position: relative;
+    z-index: 999;
+    color: #fff;
+    text-shadow: #000;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.4em;
 }
 
 #map {

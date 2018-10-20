@@ -1,22 +1,4 @@
 export default [
-    {
-        id: "",
-        title: "",
-        subtitle: "",
-        location: "",
-        start: {
-            year: "",
-            date: ""
-        },
-        end: {
-            year: "",
-            date: ""
-        },
-        colour: "",
-        latitude: 0,
-        longitude: 0,
-        zoom: 10,
-    },
 
     {
         id: "ice-caps",
@@ -24,12 +6,12 @@ export default [
         subtitle: "",
         location: "",
         start: {
-            year: "",
-            date: ""
+            year: 2010,
+            date: "2010-10-13"
         },
         end: {
-            year: "",
-            date: ""
+            year: 2018,
+            date: "2018-10-01"
         },
         colour: "",
         latitude: 0,
@@ -41,18 +23,18 @@ export default [
         id: "rainforest",
         title: "Rainforest Destruction",
         subtitle: "",
-        location: "",
+        location: "Sumatra, Indonesia",
         start: {
-            year: "",
-            date: ""
+            year: 2010,
+            date: "2000-09-12"
         },
         end: {
-            year: "",
-            date: ""
+            year: 2018,
+            date: "2018-09-03"
         },
         colour: "",
-        latitude: 0,
-        longitude: 0,
+        latitude: 0.0845,
+        longitude: 101.6513,
         zoom: 10,
     },
 
@@ -62,12 +44,12 @@ export default [
         subtitle: "",
         location: "",
         start: {
-            year: "",
-            date: ""
+            year: 2010,
+            date: "2010-10-13"
         },
         end: {
-            year: "",
-            date: ""
+            year: 2018,
+            date: "2018-10-01"
         },
         colour: "",
         latitude: 0,
@@ -81,16 +63,35 @@ export default [
         subtitle: "",
         location: "",
         start: {
-            year: "",
-            date: "",
+            year: 2010,
+            date: "2010-10-13"
         },
         end: {
-            year: "",
-            date: ""
+            year: 2018,
+            date: "2018-10-01"
         },
         colour: "",
         latitude: 0,
         longitude: 0,
         zoom: 10,
+    },
+
+    {
+        id: "city",
+        title: "City sprawl",
+        subtitle: "",
+        location: "New Delhi",
+        start: {
+            year: 2010,
+            date: "2010-10-01",
+        },
+        end: {
+            year: 2018,
+            date: "2018-10-01"
+        },
+        colour: "",
+        latitude: 28.743461,
+        longitude: 68.2829082,
+        zoom: 4,
     }
 ]

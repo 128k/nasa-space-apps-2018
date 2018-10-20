@@ -16,8 +16,8 @@ export class MapService {
             boxZoom: false,
             doubleClickZoom: false,
 
-            center: [-2.2119, 115.5357],
-            zoom: 10,
+            center: [config.lat, config.lon],
+            zoom: config.zoom,
             // Values are x and y here instead of lat and long elsewhere.
             maxBounds: [
                 [-120, -220],
