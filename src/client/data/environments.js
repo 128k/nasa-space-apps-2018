@@ -20,7 +20,7 @@ export default [
 
     {
         id: "ice-caps",
-        title: "Ice caps melting",
+        title: "Ice Caps Melting",
         subtitle: "",
         location: "",
         start: {
@@ -39,7 +39,7 @@ export default [
 
     {
         id: "rainforest",
-        title: "Rainforst destruction",
+        title: "Rainforest Destruction",
         subtitle: "",
         location: "",
         start: {
@@ -77,7 +77,7 @@ export default [
 
     {
         id: "ocean",
-        title: "Ocean trash islands",
+        title: "Ocean Trash Islands",
         subtitle: "",
         location: "",
         start: {
