@@ -12,7 +12,7 @@ export const App = () => (state, actions) => {
                     <p>{env.title}</p>
                 </a>
             ))}
-            <button href="#" onclick={actions.showIntro}>About this app</button>
+            <p class="center"><button href="#" onclick={actions.showIntro}>About this app</button></p>
             {state.selectedEnvironment.active ?
                 <Card
                     environment={state.environments.find(env => env.id === state.selectedEnvironment.id)}

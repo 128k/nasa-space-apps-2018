@@ -11,7 +11,7 @@ export const GlacierText = () => ({ panelOpen }, { openPanel }) => {
     return (
         <section id="card-text">
             <p>Glaciers are part of the cryosphere - Earth’s ice-based environments. Glaciers are immense, slow-moving rivers of thick ice which have built up from compressed snow. During the last Ice Age, 32% of the planet was covered with glaciers, a figure which has reduced to around 10% now. Most glaciers are found in Iceland, Greenland, Antarctica, and the Himalayas, but can be found on most continents.</p>
-            <video autoplay loop src={video} height="250"></video>
+            <p class="center"><video autoplay loop src={video} height="250"></video></p>
             <p><small>Video showing retreat of Greenland's Jakobshavn glacier between 1997 and 2009.</small></p>
             <div class={"panel " + (panelOpen === 0 ? "open" : "")} onclick={() => openPanel(0)}>
                 <h2>Glacial Retreat</h2>
