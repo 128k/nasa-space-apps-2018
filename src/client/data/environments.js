@@ -1,8 +1,8 @@
 export default [
 
     {
-        id: "ice-caps",
-        title: "Ice Caps Melting",
+        id: "arctic",
+        title: "Arctic",
         subtitle: "",
         location: "",
         start: {
@@ -21,7 +21,7 @@ export default [
 
     {
         id: "rainforest",
-        title: "Rainforest Destruction",
+        title: "Rainforest",
         subtitle: "",
         location: "Sumatra, Indonesia",
         start: {
@@ -36,49 +36,12 @@ export default [
         latitude: 0.0845,
         longitude: 101.6513,
         zoom: 10,
-    },
-
-    {
-        id: "glaciers",
-        title: "Glacial Retreat",
-        subtitle: "",
-        location: "",
-        start: {
-            year: 2010,
-            date: "2010-10-13"
-        },
-        end: {
-            year: 2018,
-            date: "2018-10-01"
-        },
-        colour: "",
-        latitude: 0,
-        longitude: 0,
-        zoom: 10,
-    },
-
-    {
-        id: "ocean",
-        title: "Ocean Trash Islands",
-        subtitle: "",
-        location: "",
-        start: {
-            year: 2010,
-            date: "2010-10-13"
-        },
-        end: {
-            year: 2018,
-            date: "2018-10-01"
-        },
-        colour: "",
-        latitude: 0,
-        longitude: 0,
-        zoom: 10,
+        sdgs: [12, 13, 15]
     },
 
     {
         id: "city",
-        title: "City sprawl",
+        title: "City",
         subtitle: "",
         location: "New Delhi",
         start: {
