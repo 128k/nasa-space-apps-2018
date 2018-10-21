@@ -1,8 +1,8 @@
 export default [
 
     {
-        id: "arctic",
-        title: "Arctic",
+        id: "glacier",
+        title: "Glacier",
         subtitle: "",
         location: "",
         start: {
@@ -17,7 +17,7 @@ export default [
         latitude: 0,
         longitude: 0,
         zoom: 10,
-        sdgs: [],
+        sdgs: [6, 11, 12, 13, 14],
         published: true,
     },
 
@@ -61,5 +61,26 @@ export default [
         zoom: 4,
         sdgs: [3, 8, 9, 11],
         published: true,
+    },
+
+    {
+        id: "more-soon",
+        title: "More coming soon",
+        subtitle: "",
+        location: "New Delhi",
+        start: {
+            year: 2010,
+            date: "2010-10-01",
+        },
+        end: {
+            year: 2018,
+            date: "2018-10-01"
+        },
+        colour: "",
+        latitude: 28.743461,
+        longitude: 68.2829082,
+        zoom: 4,
+        sdgs: [],
+        published: false,
     }
 ]

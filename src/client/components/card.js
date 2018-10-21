@@ -3,11 +3,12 @@ import { h } from "hyperapp"
 // import Map from "./map"
 import sdgs from "../images/sdgs/*.jpg"
 
+import { GlacierText } from "./environments/glacier"
 import { RainforestText } from "./environments/rainforest"
 import { CityText } from "./environments/city"
 
 const textMap = {
-    "arctic": null,
+    "glacier": GlacierText,
     "rainforest": RainforestText,
     "city": CityText,
 }
