@@ -59,7 +59,7 @@ export default [
         latitude: 28.743461,
         longitude: 68.2829082,
         zoom: 4,
-        sdgs: [],
+        sdgs: [3, 8, 9, 11],
         published: true,
     }
 ]

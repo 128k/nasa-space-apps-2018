@@ -5,7 +5,7 @@ export const Carousel = ({ images, delay = 1.5 }) => {
     return (
         <div class="carousel">
             {Object.entries(images).map(([year, image], idx) => (
-                <div class="frame" style={"animation-duration: " + numImages * delay + "s; animation-delay: " + delay * idx + "s;"}>
+                <div class={"frame " + (numImages > 2 ? "many" : "few")} style={"animation-duration: " + numImages * delay + "s; animation-delay: " + delay * idx + "s;"}>
                     <span class="year">{year}</span>
                     <img src={image} />
                 </div>

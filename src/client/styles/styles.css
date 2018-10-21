@@ -58,6 +58,10 @@ main {
     display: block;
 }
 
+.card-image {
+    width: 100%;
+}
+
 .panel {
     max-height: 3em;
     overflow: hidden;
@@ -84,8 +88,8 @@ main {
     cursor: pointer;
 }
 .sdg {
-    height: 6em;
-    width: 6em;
+    height: 4em;
+    width: 4em;
     margin-right: 0.5em;
 }
 
@@ -158,7 +162,7 @@ main {
     position: absolute;
     opacity: 1;
     z-index: 9998;
-    animation: fade 5s infinite;
+    animation: fade-few 5s infinite;
 }
 
 .carousel img {
@@ -176,19 +180,24 @@ main {
     left:0;
     right:0;
     opacity:0;
-    animation-name: fader;  
     animation-iteration-count: infinite; 
 }
+.carousel .few {
+    animation-name: fade-few;
+}
+.carousel .many {
+    animation-name: fade-many;
+}
 
-@keyframes fader {
+@keyframes fade-few {
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+}
+
+@keyframes fade-many {
     0%   { opacity: 0; }
     11.11%   { opacity: 1; }
     33.33%  { opacity: 1; }
     44.44%  { opacity: 0; }
     100% { opacity: 0; }
-}
-
-@keyframes fade {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
 }

@@ -3,7 +3,7 @@ import { h } from "hyperapp"
 import Carousel from "../carousel"
 
 import images from "../../images/environments/rainforest/timelapse/*.jpg"
-
+import palmOilImage from "../../images/environments/rainforest/palm-oil.jpg"
 
 export const RainforestText = () => ({ panelOpen }, { openPanel }) => {
 
@@ -11,6 +11,7 @@ export const RainforestText = () => ({ panelOpen }, { openPanel }) => {
         <section id="card-text">
             <p>Rainforests represent some of the most diverse ecosystems on Earth. They are a huge carbon sink, with tonnes and tonnes of carbon locked up within the trunks, branches and leaves of the giant trees within them. The rainforests are often called the ‘lungs of the Earth’ for the vital role they play in gaseous exchange, turning carbon dioxide into oxygen. The rainforests also provide a range of other ‘ecosystem services’ which link into many other earth processes, from nutrient cycling and being part of the water cycle, to stabilising soil and climate.</p>
             <Carousel images={images} />
+            <p><small>Animation showing deforestation in Rondônia between 2000 and 2012 (images from NASA)</small></p>
             <div class={"panel " + (panelOpen === 0 ? "open" : "")} onclick={() => openPanel(0)}>
                 <h2>Deforestation</h2>
                 <p>Deforestation is affecting rainforests around the globe, with some of the worst affected areas in Indonesia and South America. Every hectare of rainforest that is destroyed reduces the habitats of endemic species from tigers, elephants and orangutans to reptiles and insects that share their homes, and the hundreds of plant species within the forests.</p>
@@ -20,6 +21,8 @@ export const RainforestText = () => ({ panelOpen }, { openPanel }) => {
 
             <div class={"panel " + (panelOpen === 1 ? "open" : "")} onclick={() => openPanel(1)}>
                 <h2>Causes of Deforestation</h2>
+                <img class="card-image" src={palmOilImage} />
+                <p><small>Palm oil plant and fruit</small></p>
                 <p>Deforestation has a number of causes:</p>
                 <ul>
                     <li>Clearing rainforest for palm oil plantations</li>
