@@ -58,6 +58,21 @@ main {
     display: block;
 }
 
+#card a {
+    color: #444;
+    display: inline-block;
+    margin: 0.1em 0;
+    position: relative;
+    padding-left: 1.4em;
+}
+#card a:before {
+    content: '\021AA';
+    text-decoration: none;
+    margin: 0.1em;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
 .card-image {
     width: 100%;
 }

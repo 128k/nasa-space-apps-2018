@@ -9,7 +9,7 @@ export const Intro = ({ hideIntro }) => (
         <p>In a post-truth world full of fake news and sensationalising, it can be hard to know what’s actually happening to our planet. Real Earth shows the planet we’re living on evolving over time, and aims to inspire people to work together to undo the damage our home is facing.</p>
         <p>Real Earth aims to inspire hope whilst providing links to social and economic factors that are impacting the environments of our world.</p>
         <button onclick={hideIntro}>Explore!</button>
-        <p><small>This app was created as part of the NASA space apps challenge 2018 by Chris Briggs, Sarah Briggs, James Mitchell and Mel Piper.</small></p>
+        <p><small>This app was created as part of the NASA space apps challenge 2018 by Chris Briggs, Sarah Briggs &amp; James Mitchell.</small></p>
     </div>
 )
 
