@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: Helvetica, "Source San Pro", Arial, sans-serif;
 }
-
 button {
     background-color: rgb(23, 167, 42);
     border: 1px solid rgb(17, 150, 35);
@@ -50,18 +49,13 @@ main {
     left: 0;
     background-color:#eee;
     min-height: 100vh;
+    width: 100vw;
 }
 #card.hide {
     display: none;
 }
 #card.show {
     display: block;
-}
-#card h1 {
-    margin: -2em 0 1em;
-    color: #fff;
-    position: relative;
-    z-index: 99999;
 }
 
 .panel {
@@ -96,11 +90,11 @@ main {
 }
 
 .column {
-    padding: 1em;
+    padding: 0 1em 1em;
 }
 
 .year {
-    position: relative;
+    position: absolute;
     z-index: 999;
     color: #fff;
     text-shadow: #000;
@@ -127,13 +121,30 @@ main {
     font-size: 1.4em;
 }
 
-.hero.environment-arctic {
+.card-hero {
+    display: block;
+    height: 12em;
+    color: #fff;
+    padding: 1em;
+    background-size: cover;
+    position: relative;
+}
+.card-hero h1 {
+    color: #fff;
+    position: absolute;
+    z-index: 99999;
+    bottom: 0.5em;
+    left: 0.5em;
+    margin: 0;
+}
+
+.hero.environment-arctic, .card-hero.environment-arctic {
     background-image: url("../images/environments/arctic/hero.jpg")
 }
-.hero.environment-rainforest {
+.hero.environment-rainforest, .card-hero.environment-rainforest {
     background-image: url("../images/environments/rainforest/hero.jpg")
 }
-.hero.environment-city {
+.hero.environment-city, .card-hero.environment-city {
     background-image: url("../images/environments/city/hero.jpg")
 }
 
@@ -148,6 +159,33 @@ main {
     opacity: 1;
     z-index: 9998;
     animation: fade 5s infinite;
+}
+
+.carousel img {
+    width: 100vw;
+}
+
+.carousel { 
+    position:relative;
+    height: 250px;
+    width: 100vw;
+    margin: 0 -1em;
+}
+.carousel .frame { 
+    position:absolute; 
+    left:0;
+    right:0;
+    opacity:0;
+    animation-name: fader;  
+    animation-iteration-count: infinite; 
+}
+
+@keyframes fader {
+    0%   { opacity: 0; }
+    11.11%   { opacity: 1; }
+    33.33%  { opacity: 1; }
+    44.44%  { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 @keyframes fade {

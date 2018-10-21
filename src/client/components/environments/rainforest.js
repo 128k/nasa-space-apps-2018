@@ -1,12 +1,16 @@
 import { h } from "hyperapp"
 
-import image from '../../images/environments/rainforest/hero.jpg'
+import Carousel from "../carousel"
+
+import images from "../../images/environments/rainforest/timelapse/*.jpg"
+
 
 export const RainforestText = () => ({ panelOpen }, { openPanel }) => {
 
     return (
         <section id="card-text">
             <p>Rainforests represent some of the most diverse ecosystems on Earth. They are a huge carbon sink, with tonnes and tonnes of carbon locked up within the trunks, branches and leaves of the giant trees within them. The rainforests are often called the ‘lungs of the Earth’ for the vital role they play in gaseous exchange, turning carbon dioxide into oxygen. The rainforests also provide a range of other ‘ecosystem services’ which link into many other earth processes, from nutrient cycling and being part of the water cycle, to stabilising soil and climate.</p>
+            <Carousel images={images} />
             <div class={"panel " + (panelOpen === 0 ? "open" : "")} onclick={() => openPanel(0)}>
                 <h2>Deforestation</h2>
                 <p>Deforestation is affecting rainforests around the globe, with some of the worst affected areas in Indonesia and South America. Every hectare of rainforest that is destroyed reduces the habitats of endemic species from tigers, elephants and orangutans to reptiles and insects that share their homes, and the hundreds of plant species within the forests.</p>
@@ -53,15 +57,17 @@ export const RainforestText = () => ({ panelOpen }, { openPanel }) => {
                 </dl>
             </div>
 
-            <h2>Useful links</h2>
-            <a href="https://www.researchgate.net/publication/229086194_The_Value_of_the_World's_Ecosystem_Services_and_Natural_Capital">Ecosystem Services (Costanza et al)</a><br />
-            <a href="https://www.carbonbrief.org/deforestation-in-the-tropics-affects-climate-around-the-world-study-finds">Deforestation affects climate</a><br />
-            <a href="http://theconversation.com/extinction-is-a-natural-process-but-its-happening-at-1-000-times-the-normal-speed-99191">Unnatural extinction rate</a><br />
-            <a href="https://academic.oup.com/ajcn/article/78/3/660S/4690010">Meat vs plant-based diets</a><br />
-            <a href="https://www.orangutans-sos.org/take-action/learn/palm-oil/">Sustainable palm oil</a><br />
-            <a href="http://www.fao.org/docrep/007/y5019e/y5019e03.htm">Animal agrigulture</a><br />
-            <a href="http://www.who.int/nutrition/topics/3_foodconsumption/en/index4.html">Animal product consumption</a><br />
-            <a href="https://www.fsc-uk.org/en-uk/about-fsc/why-choose-fsc/fsc-for-your-business/why-use-fsc-certified-wood">FSC wood and wood products</a>
+            <div class={"panel " + (panelOpen === 4 ? "open" : "")} onclick={() => openPanel(4)}>
+                <h2>Useful links</h2>
+                <a href="https://www.researchgate.net/publication/229086194_The_Value_of_the_World's_Ecosystem_Services_and_Natural_Capital">Ecosystem Services (Costanza et al)</a><br />
+                <a href="https://www.carbonbrief.org/deforestation-in-the-tropics-affects-climate-around-the-world-study-finds">Deforestation affects climate</a><br />
+                <a href="http://theconversation.com/extinction-is-a-natural-process-but-its-happening-at-1-000-times-the-normal-speed-99191">Unnatural extinction rate</a><br />
+                <a href="https://academic.oup.com/ajcn/article/78/3/660S/4690010">Meat vs plant-based diets</a><br />
+                <a href="https://www.orangutans-sos.org/take-action/learn/palm-oil/">Sustainable palm oil</a><br />
+                <a href="http://www.fao.org/docrep/007/y5019e/y5019e03.htm">Animal agrigulture</a><br />
+                <a href="http://www.who.int/nutrition/topics/3_foodconsumption/en/index4.html">Animal product consumption</a><br />
+                <a href="https://www.fsc-uk.org/en-uk/about-fsc/why-choose-fsc/fsc-for-your-business/why-use-fsc-certified-wood">FSC wood and wood products</a>
+            </div>
 
         </section>
     )

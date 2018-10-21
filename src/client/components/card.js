@@ -1,6 +1,6 @@
 import { h } from "hyperapp"
 
-import Map from "./map"
+// import Map from "./map"
 import sdgs from "../images/sdgs/*.jpg"
 
 import { RainforestText } from "./environments/rainforest"
@@ -16,9 +16,11 @@ export const Card = ({ environment, hideCard }) => {
     return (
         <div id="card">
             <div class="close" onclick={() => environment.published ? hideCard() : null}>x</div>
-            <Map environment={environment} />
-            <div class="column">
+            {/* <Map environment={environment} /> */}
+            <div class={"card-hero environment-" + environment.id}>
                 <h1>{environment.title}</h1>
+            </div>
+            <div class="column">
                 <Text />
                 <p>
                     {environment.sdgs.map(num => (
