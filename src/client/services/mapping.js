@@ -29,7 +29,6 @@ export class MapService {
             '//gibs-{s}.earthdata.nasa.gov/wmts/epsg3857/best/' +
             '{layer}/default/{time}/{tileMatrixSet}/{z}/{y}/{x}.jpg';
 
-        console.log(config.date)
         const layer = L.tileLayer(template, {
             layer: 'MODIS_Terra_CorrectedReflectance_TrueColor',
             tileMatrixSet: 'GoogleMapsCompatible_Level9',

@@ -9,7 +9,8 @@ export const actions = {
         eventBus.dispatch("environmentUpdate")
         return { selectedEnvironment: { id, active: true } }
     },
-    hideCard: () => state => ({ selectedEnvironment: { ...state.selectedEnvironment, active: false } })
+    hideCard: () => state => ({ selectedEnvironment: { ...state.selectedEnvironment, active: false, panelOpen: null } }),
+    openPanel: num => state => ({ panelOpen: state.panelOpen !== num ? num : null })
 }
 
 export default actions

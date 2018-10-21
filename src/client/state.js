@@ -8,7 +8,8 @@ export const state = {
     selectedEnvironment: {
         id: environments[0].id,
         active: false
-    }
+    },
+    panelOpen: null,
 }
 
 export default state

@@ -4,7 +4,6 @@ import MapService from "../services/mapping"
 
 export const DualMaps = ({ environment }) => (
     <section id="dual-maps">
-        {console.log(environment)}
         <div id="map-bg"></div>
         <Map
             date={environment.start.date}

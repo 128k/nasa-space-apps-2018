@@ -17,6 +17,8 @@ export default [
         latitude: 0,
         longitude: 0,
         zoom: 10,
+        sdgs: [],
+        published: true,
     },
 
     {
@@ -36,7 +38,8 @@ export default [
         latitude: 0.0845,
         longitude: 101.6513,
         zoom: 10,
-        sdgs: [12, 13, 15]
+        sdgs: [12, 13, 15],
+        published: true,
     },
 
     {
@@ -56,5 +59,7 @@ export default [
         latitude: 28.743461,
         longitude: 68.2829082,
         zoom: 4,
+        sdgs: [],
+        published: true,
     }
 ]

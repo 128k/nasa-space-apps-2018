@@ -11,21 +11,23 @@ const textMap = {
     "city": null,
 }
 
-export const Card = ({ environment, hideCard }) => (
-    <div id="card">
-        <div class="close" onclick={() => hideCard()}>x</div>
-        <Map environment={environment} />
-        <div class="column">
-            <h1>{environment.title}</h1>
-            {textMap[environment.id]}
-            <p><a href="#">Find out more</a></p>
-            <p>
-                {environment.sdgs.map(num => (
-                    <img class="sdg" src={sdgs[num]} />
-                ))}
-            </p>
+export const Card = ({ environment, hideCard }) => {
+    const Text = textMap[environment.id]
+    return (
+        <div id="card">
+            <div class="close" onclick={() => environment.published ? hideCard() : null}>x</div>
+            <Map environment={environment} />
+            <div class="column">
+                <h1>{environment.title}</h1>
+                <Text />
+                <p>
+                    {environment.sdgs.map(num => (
+                        <img class="sdg" src={sdgs[num]} />
+                    ))}
+                </p>
+            </div>
         </div>
-    </div>
-)
+    )
+}
 
 export default Card
