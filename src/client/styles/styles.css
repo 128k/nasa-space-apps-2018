@@ -190,6 +190,9 @@ main {
 .hero.environment-city, .card-hero.environment-city {
     background-image: url("../images/environments/city/hero.jpg")
 }
+.hero.environment-more-soon, .card-hero.environment-more-soon {
+    background-image: url("../images/environments/default-hero.jpg")
+}
 
 #map {
     height: 70vh;
