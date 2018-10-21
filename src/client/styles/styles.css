@@ -1,19 +1,19 @@
 body {
     margin: 0;
     font-family: Helvetica, "Source San Pro", Arial, sans-serif;
-    text-align: center;
-     color:#555;
 }
 
 button {
     background-color: rgb(23, 167, 42);
     border: 1px solid rgb(17, 150, 35);
     color: #fff;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     font-size: 1em;
     font-weight: bold;
-    padding: 0.7em 1.8em 0.7em 1.8em;
+    padding: 0.5em 1.5em 0.5em 1.5em;
     cursor: pointer;
+    min-width: 150px;
+    min-height: 60px;
 }
 
 #intro {
@@ -40,8 +40,7 @@ button {
     max-width: 359px;
     opacity: 0.8;
     margin: 2em 0;
-    
-    border-radius: 0.8em;
+    border-radius: 10px;
 }
 
 main {
@@ -54,6 +53,7 @@ main {
     left: 0;
     background-color:#eee;
     min-height: 100vh;
+    width: 100vw;
 }
 #card.hide {
     display: none;
@@ -81,87 +81,61 @@ main {
     width: 100%;
 }
 
-#card h1 {
-    margin: -2em 0 1em;
-    color: #fff;
-    position: relative;
-    z-index: 99999;
-}
-
 .panel {
     max-height: 3em;
     overflow: hidden;
     transition: 0.2s linear;
     transition-property: max-height;
     cursor: pointer;
-    border: 1px solid grey;
-    margin: 0px 0px 5px 0px;
-    padding: 0px;
-    border-radius: 10px;
-    min-height: 70px;
 }
-
-.panel p {
-	padding: 10px;
-}
-
-.panel dt {
-	text-align: left;
-	padding-left: 10px;
-	font-weight: 800;
-}
-
-.panel dd {
-	text-align: left;
-}
-
-.panel h2 {
-	width: 100%;
-	margin: 0px 0px 0px 0px !important;
-	background-color: #2e8540;
-	color: white;
-	border-radius: 10px 10px 0px 0px;
-}
-
 .panel.open {
     max-height: 100em;
 }
 
+.panel h2 {
+    position: relative;
+    background-color: #ddd;
+    margin: 0;
+    padding: 0.4em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.2em;
+}
+.panel h2:after {
+    content: '\02795';
+    font-size: 0.8em;
+    position: absolute;
+    right: 0.6em;
+}
+.panel.open h2:after {
+    content: '\02796';
+}
+
 .close {
     background-color: rgba(0,0,0,0.5);
-    padding: 0.2em 0.5em;
+    padding: 0.3em 0.55em;
     display: inline-block;
-    /*border-radius: 10em;*/
-    /*color: #fff;*/
+    border-radius: 10em;
+    color: #fff;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.5em;
     position: absolute;
     right: 0.5em;
     top: 0.5em;
     z-index: 99999;
     cursor: pointer;
-    color: white;
-	background-color: #565656;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	vertical-align: middle;
-	line-height: 1.2em;
 }
-
 .sdg {
-    height: 6em;
-    width: 6em;
+    height: 4em;
+    width: 4em;
     margin-right: 0.5em;
 }
 
 .column {
-    padding: 1em;
+    padding: 0 1em 1em;
 }
 
 .year {
-    position: relative;
+    position: absolute;
     z-index: 999;
     color: #fff;
     text-shadow: #000;
@@ -188,13 +162,30 @@ main {
     font-size: 1.4em;
 }
 
-.hero.environment-arctic {
+.card-hero {
+    display: block;
+    height: 12em;
+    color: #fff;
+    padding: 1em;
+    background-size: cover;
+    position: relative;
+}
+.card-hero h1 {
+    color: #fff;
+    position: absolute;
+    z-index: 99999;
+    bottom: 0.5em;
+    left: 0.5em;
+    margin: 0;
+}
+
+.hero.environment-arctic, .card-hero.environment-arctic {
     background-image: url("../images/environments/arctic/hero.jpg")
 }
-.hero.environment-rainforest {
+.hero.environment-rainforest, .card-hero.environment-rainforest {
     background-image: url("../images/environments/rainforest/hero.jpg")
 }
-.hero.environment-city {
+.hero.environment-city, .card-hero.environment-city {
     background-image: url("../images/environments/city/hero.jpg")
 }
 
@@ -208,19 +199,50 @@ main {
     position: absolute;
     opacity: 1;
     z-index: 9998;
-    animation: fade 5s infinite;
+    animation: fade-few 5s infinite;
 }
 
-@keyframes fade {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
+.carousel img {
+    width: 100vw;
+}
+
+.carousel { 
+    position:relative;
+    min-height: 250px;
+    width: 100vw;
+    margin: 0 -1em;
+    overflow: hidden;
+}
+.carousel .frame { 
+    position:absolute; 
+    left:0;
+    right:0;
+    opacity:0;
+    animation-iteration-count: infinite; 
+}
+.carousel .few {
+    animation-name: fade-few;
+}
+.carousel .many {
+    animation-name: fade-many;
+}
+
+@keyframes fade-few {
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+}
+
+@keyframes fade-many {
+    0%   { opacity: 0; }
+    11.11%   { opacity: 1; }
+    33.33%  { opacity: 1; }
+    44.44%  { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 @media screen and (min-width: 600px) {
-    
-    /*Desktop Styling*/
-    
-    * {
+	
+	* {
 	   margin: auto;
 	   text-align: center;
     }
@@ -240,35 +262,36 @@ main {
 	    text-align: center;
 	    margin: auto;
     }
-    
+
     #card {
 	    top: 0vw;
 	    left: 10vw;
 	    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	    width: 80%;
-	    margin: 20px 0px 20px 0px;
+	    margin: 30px 0px 30px 0px;
     }
     
-    #map {
-	   	width: 100%;
-	    margin: auto;
-	    text-align: center;
+    .card-image {
+	    width: 50%;
     }
     
-    .panel {
-	    border: 1px solid grey;
-	    margin: 5px 0px 5px 0px;
-	    border-radius: 10px;
-	}
-
-	.panel p {
-		
-	}
+    .carousel {
+	    min-height: 60vh;
+	    width: 80vw;
+    }
+    
+    .carousel img {
+	    max-width: 80vw;
+    }
+    
+    #card-text p {
+	    padding: 20px;
+    }
+    
+   
+    
+    .sdg, ul, a, h4 {
+	    padding-bottom: 20px;
+    }
 	
-	.panel h2 {
-		width: 100%;
-		min-height: 30px;
-		color: white;
-	}
-    
 }
