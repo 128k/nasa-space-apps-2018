@@ -73,6 +73,24 @@ main {
     max-height: 100em;
 }
 
+.panel h2 {
+    position: relative;
+    background-color: #ddd;
+    margin: 0;
+    padding: 0.4em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.2em;
+}
+.panel h2:after {
+    content: '\02795';
+    font-size: 0.8em;
+    position: absolute;
+    right: 0.6em;
+}
+.panel.open h2:after {
+    content: '\02796';
+}
+
 .close {
     background-color: rgba(0,0,0,0.5);
     padding: 0.3em 0.55em;
