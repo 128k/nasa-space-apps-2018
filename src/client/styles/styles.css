@@ -14,7 +14,7 @@ button {
 
 #intro {
     text-align: center;
-    height: calc(100vh - 1em);
+    min-height: calc(100vh - 1em);
     background-color: #000;
     color: #eee;
     padding: 0.5em;
