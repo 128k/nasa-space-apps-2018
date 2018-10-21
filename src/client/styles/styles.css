@@ -73,7 +73,11 @@ main {
     left: 0;
     top: -2px;
 }
-.card-image {
+#card video {
+    width: 100vw;
+    margin: -1em;
+}
+.panel .card-image {
     width: 100%;
 }
 
@@ -121,8 +125,8 @@ main {
     cursor: pointer;
 }
 .sdg {
-    height: 4em;
-    width: 4em;
+    height: 3.5em;
+    width: 3.5em;
     margin-right: 0.5em;
 }
 
@@ -156,6 +160,7 @@ main {
     bottom: 0;
     font-weight: bold;
     font-size: 1.4em;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .card-hero {
@@ -173,10 +178,11 @@ main {
     bottom: 0.5em;
     left: 0.5em;
     margin: 0;
+    text-shadow: 1px 1px 1px #000;
 }
 
-.hero.environment-arctic, .card-hero.environment-arctic {
-    background-image: url("../images/environments/arctic/hero.jpg")
+.hero.environment-glacier, .card-hero.environment-glacier {
+    background-image: url("../images/environments/glacier/hero.jpg")
 }
 .hero.environment-rainforest, .card-hero.environment-rainforest {
     background-image: url("../images/environments/rainforest/hero.jpg")
@@ -207,6 +213,7 @@ main {
     height: 250px;
     width: 100vw;
     margin: 0 -1em;
+    overflow: hidden;
 }
 .carousel .frame { 
     position:absolute; 

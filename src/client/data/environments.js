@@ -1,8 +1,8 @@
 export default [
 
     {
-        id: "arctic",
-        title: "Arctic",
+        id: "glacier",
+        title: "Glacier",
         subtitle: "",
         location: "",
         start: {
@@ -17,7 +17,7 @@ export default [
         latitude: 0,
         longitude: 0,
         zoom: 10,
-        sdgs: [],
+        sdgs: [6, 11, 12, 13, 14],
         published: true,
     },
 
